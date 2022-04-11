@@ -1,4 +1,4 @@
-package br.com.fiap.progamer.dao;
+package br.com.fiap.usuario.dao;
 
 import java.util.List;
 
@@ -7,27 +7,27 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import br.com.fiap.progamer.model.Setup;
+import br.com.fiap.usuario.model.Formulario;
 
-public class SetupDao {
+public class FormularioDao {
 	
-	public void create(Setup setup) {
+	public void create(Formulario formulario) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("progamer-persistence-unit");
 		EntityManager manager = factory.createEntityManager();
 		
 		manager.getTransaction().begin();
-		manager.persist(setup);
+		manager.persist(formulario);
 		manager.getTransaction().commit();
 		
 		manager.clear();
 	}
 	
-	public List<Setup> listAll(){
+	public List<Formulario> listAll(){
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("progamer-persistence-unit");
 		EntityManager manager = factory.createEntityManager();
 
-		TypedQuery<Setup> query = manager.createQuery("SELECT s FROM Setup s", Setup.class);
+		TypedQuery<Formulario> query = manager.createQuery("SELECT s FROM Formulario s", Formulario.class);
 		
 		return query.getResultList();
 	}

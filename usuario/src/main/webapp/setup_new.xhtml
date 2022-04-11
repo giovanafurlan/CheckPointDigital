@@ -26,25 +26,29 @@
 
 	<h:form>
 	<p:card style="width: 25em; margin: 1em auto">
-		<f:facet name="title">New Setup</f:facet>
+		<f:facet name="title">New Form</f:facet>
 
 		<div class="ui-fluid">
 			<div class="p-field">
 				<label for="name">Name</label>
-				<p:inputText id="name" type="text" value="#{setupBean.setup.name}" /> 
+				<p:inputText id="name" type="text" value="#{formularioBean.formulario.name}" /> 
 			</div>
 			<div class="p-field">
-				<label for="description">Description</label>
-				<p:inputTextarea id="description" type="text" value="#{setupBean.setup.description}" />
+				<label for="description">Date of birth</label>
+				<p:inputText id="name" type="text" value="#{formularioBean.formulario.dataNascimento}" /> 
 			</div>
 			<div class="p-field">
-				<label for="price">Price</label>
-				<p:inputNumber value="#{setupBean.setup.price}" id="price" symbol="R$ " decimalSeparator="," thousandSeparator="." />
+				<label for="description">Email</label>
+				<p:inputText id="name" type="text" value="#{formularioBean.formulario.email}" /> 
+			</div>
+			<div class="p-field">
+				<label for="description">Password</label>
+				<p:inputText id="name" type="password" value="#{formularioBean.formulario.senha}" /> 
 			</div>
 		</div>
 		<f:facet name="footer">
-			<p:commandButton icon="pi pi-check" value="Save" action="#{setupBean.save}"/>
-			<p:commandButton icon="pi pi-times" value="Cancel" action="#{setupBean.list()}"
+			<p:commandButton icon="pi pi-check" value="Save" action="#{formularioBean.save}"/>
+			<p:commandButton icon="pi pi-times" value="Cancel" action="#{formularioBean.list()}"
 				styleClass="ui-button-secondary" style="margin-left: .5em" />
 		</f:facet>
 	</p:card>
